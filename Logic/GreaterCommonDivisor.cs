@@ -13,8 +13,8 @@ namespace Logic
         /// <returns></returns>
         public static int NormalGcd(int a, int b)
         {
-            if(a < 0 || b < 0)
-                throw new ArgumentException("Negative number.");
+            if (a < 0) a = -a;
+            if (b < 0) b = -b;
 
             while (a != 0 && b != 0)
             {
@@ -93,9 +93,6 @@ namespace Logic
         /// <returns></returns>
         public static int BinaryGcd(int a, int b)
         {
-            if (a < 0 || b < 0)
-                throw new ArgumentException("Negative number.");
-
             if (a == 0 || b == 0)
                 return a + b;
             if (a == b)

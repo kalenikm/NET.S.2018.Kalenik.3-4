@@ -25,13 +25,6 @@ namespace Logic.Tests
             return GreaterCommonDivisor.NormalGcd(a, b);
         }
 
-        [TestCase]
-        public void NormalGcd_ThrowArgumentException_NegativeNumber()
-        {
-            Assert.Throws<ArgumentException>(() => GreaterCommonDivisor.NormalGcd(-35, 28));
-        }
-
-
         [TestCase(new[] { 3, 743, 75, 3, 4, 85, 7, 65, 4, 94, 3, 6, 68, 4, 6, 372, 46 }, ExpectedResult = 1)]
         [TestCase(new[] { 3, 12, 48, 9, 18 }, ExpectedResult = 3)]
         [TestCase(new[] { 25, 5, 4, 8, 3246, 1, 8, 568, 56 }, ExpectedResult = 1)]
@@ -49,12 +42,6 @@ namespace Logic.Tests
         public int BinaryGcdTestWithTwoNumbers(int a, int b)
         {
             return GreaterCommonDivisor.BinaryGcd(a, b);
-        }
-
-        [TestCase]
-        public void BinaryGcd_ThrowArgumentException_NegativeNumber()
-        {
-            Assert.Throws<ArgumentException>(() => GreaterCommonDivisor.BinaryGcd(-35, 28));
         }
     }
 }
