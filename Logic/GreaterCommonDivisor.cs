@@ -5,6 +5,12 @@ namespace Logic
 {
     public class GreaterCommonDivisor
     {
+        /// <summary>
+        /// Returns greater common divisor of two numbers.
+        /// </summary>
+        /// <param name="a">First number.</param>
+        /// <param name="b">Second number.</param>
+        /// <returns></returns>
         public static int NormalGcd(int a, int b)
         {
             if(a < 0 || b < 0)
@@ -24,6 +30,12 @@ namespace Logic
             return a + b;
         }
 
+        /// <summary>
+        /// Returns greater common divisor of array of numbers and time that was spent by this method.
+        /// </summary>
+        /// <param name="time">Output time that was spent by method.</param>
+        /// <param name="array">Input array of numbers.</param>
+        /// <returns></returns>
         public static int NormalGcd(out TimeSpan time, params int[] array)
         {
             if(array == null || array.Length == 0)
@@ -52,6 +64,11 @@ namespace Logic
             return array[0];
         }
 
+        /// <summary>
+        /// Returns greater common divisor of array of numbers.
+        /// </summary>
+        /// <param name="array">Numbers.</param>
+        /// <returns></returns>
         public static int NormalGcd(params int[] array)
         {
             if (array == null || array.Length == 0)
