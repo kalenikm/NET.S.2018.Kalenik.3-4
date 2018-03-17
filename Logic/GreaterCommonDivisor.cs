@@ -93,6 +93,9 @@ namespace Logic
         /// <returns></returns>
         public static int BinaryGcd(int a, int b)
         {
+            if (a < 0 || b < 0)
+                throw new ArgumentException("Negative number.");
+
             if (a == 0 || b == 0)
                 return a + b;
             if (a == b)
