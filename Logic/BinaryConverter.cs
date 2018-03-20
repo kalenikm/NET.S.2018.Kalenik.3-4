@@ -5,6 +5,11 @@ namespace Logic
 {
     public static class BinaryConverter
     {
+        /// <summary>
+        /// Convert double to binary string.
+        /// </summary>
+        /// <param name="number">Input number.</param>
+        /// <returns>Returns binary string.</returns>
         public static string DoubleToBinary(this double number)
         {
             #region CheckConst
@@ -60,11 +65,16 @@ namespace Logic
                 --pow;
             }
             string result = str.ToString();
-            result = sign + IntToBinary(1023 + powBuff) + result.Substring(result.IndexOf("1") + 1);
+            result = sign + LongToBinary(1023 + powBuff) + result.Substring(result.IndexOf("1") + 1);
             return result + new string('0', 64 - result.Length);
         }
 
-        public static string IntToBinary(this long number)
+        /// <summary>
+        /// Convert long to binary string.
+        /// </summary>
+        /// <param name="number">Input number.</param>
+        /// <returns>Returns binary string.</returns>
+        public static string LongToBinary(this long number)
         {
             var a = (long)Math.Log(number, 2);
             long m = 0;
