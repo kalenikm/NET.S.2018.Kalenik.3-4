@@ -18,6 +18,7 @@ namespace Logic.Tests
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(-0.0, ExpectedResult = "1000000000000000000000000000000000000000000000000000000000000000")]
         [TestCase(0.0, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000000")]
+        [TestCase(0.0124, ExpectedResult = "0011111110001001011001010010101111010011110000110110000100010011")]
         public string DoubleToBinary(double number)
         {
             return number.DoubleToBinary();

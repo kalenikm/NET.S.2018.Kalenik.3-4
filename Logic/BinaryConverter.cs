@@ -50,10 +50,10 @@ namespace Logic
                 return sign + new string('0', 63);
 
             number = Math.Abs(number);
-            var pow = number < 1 ? 0 : (long)Math.Log((long)number, 2);
+            var pow = number < 1.0 ? (long)Math.Log(number, 2) - 1 : (long)Math.Log(number, 2);
             var powBuff = pow;
             StringBuilder str = new StringBuilder(64);
-            while (number - num >= Math.Pow(2, -51))
+            while (number - num >= Math.Pow(2, -52 + powBuff))
             {
                 if (num + Math.Pow(2, pow) <= number)
                 {
@@ -65,7 +65,8 @@ namespace Logic
                 --pow;
             }
             string result = str.ToString();
-            result = sign + LongToBinary(1023 + powBuff) + result.Substring(result.IndexOf("1") + 1);
+            string exp = LongToBinary(1023 + powBuff);
+            result = sign + new string('0', 11 - exp.Length) + exp + result.Substring(result.IndexOf("1") + 1);
             return result + new string('0', 64 - result.Length);
         }
 
